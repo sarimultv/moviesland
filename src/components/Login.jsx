@@ -7,9 +7,9 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/store.js/userSlice";
+import { BODY_BG_IMG, USER_AVATAR } from "../utils/constants";
 
 const Login = () => {
   const [isFormSign, setIsFormSign] = useState(true);
@@ -17,7 +17,7 @@ const Login = () => {
   const fullName = useRef(null);
   const email = useRef(null);
   const password = useRef(null);
-  const navigate = useNavigate();
+
   const dispatch = useDispatch();
 
   const toggleSigInBtn = () => {
@@ -28,7 +28,7 @@ const Login = () => {
     //Validate form input
     const message = checkValidData(email.current.value, password.current.value);
     setErrorMessage(message);
-    console.log(message);
+
     if (message) return;
 
     if (!isFormSign) {
@@ -40,15 +40,12 @@ const Login = () => {
         .then((userCredential) => {
           // Signed up
           const user = userCredential.user;
-          console.log(user);
 
           updateProfile(user, {
             displayName: fullName.current.value,
-            photoURL: "https://avatars.githubusercontent.com/u/49907699?v=4",
+            photoURL: USER_AVATAR,
           })
             .then(() => {
-              alert("profile updated");
-              navigate("/browse");
               const { uid, email, displayName, photoURL } = auth.currentUser;
               dispatch(addUser({ uid, email, displayName, photoURL }));
             })
@@ -60,7 +57,6 @@ const Login = () => {
           const errorCode = error.code;
           const errorMessage = error.message;
           setErrorMessage(errorCode - errorMessage);
-          console.log(error);
         });
     } else {
       signInWithEmailAndPassword(
@@ -71,14 +67,11 @@ const Login = () => {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-          console.log(user);
-          navigate("/browse");
         })
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
           setErrorMessage(errorCode - errorMessage);
-          //console.log(errorCode - errorMessage);
         });
     }
   };
@@ -87,11 +80,7 @@ const Login = () => {
     <div className="">
       <Header />
       <div className="absolute">
-        <img
-          className=""
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/47c2bc92-5a2a-4f33-8f91-4314e9e62ef1/web/IN-en-20240916-TRIFECTA-perspective_72df5d07-cf3f-4530-9afd-8f1d92d7f1a8_large.jpg"
-          alt="backgroundImage"
-        />
+        <img className="" src={BODY_BG_IMG} alt="backgroundImage" />
       </div>
 
       <form
