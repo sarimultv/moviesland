@@ -1,8 +1,8 @@
 const VideoTitle = ({ title, description }) => {
   return (
     <div className="absolute text-white px-16 pt-[20%] bg-gradient-to-r from-black w-full aspect-video">
-      <h1 className="text-4xl font-bold mb-4">{title}</h1>
-      <p className="w-1/2 mb-4">{description}</p>
+      <h1 className="text-4xl font-bold mb-4">{title.slice(0, 34)}</h1>
+      <p className="w-1/2 mb-4">{description.slice(0, 300)}</p>
       <div className="my-3">
         <button className="bg-white rounded p-3 mr-2 text-black hover:bg-opacity-80">
           ▶ Play
