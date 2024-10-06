@@ -1,7 +1,6 @@
 import MovieCard from "./MovieCard";
 
 const MovieList = ({ title, movies }) => {
-  // console.log(videos);
   return (
     movies.length !== 0 && (
       <div className="px-8">

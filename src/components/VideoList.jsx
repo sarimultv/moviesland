@@ -1,7 +1,6 @@
 import VideoCard from "./VideoCard";
 
 const VideoList = ({ title, videos }) => {
-  // console.log(videos);
   return (
     videos && (
       <div className="px-8">
