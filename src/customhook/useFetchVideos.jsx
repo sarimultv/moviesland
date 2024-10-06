@@ -1,14 +1,14 @@
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addMostPopularVideos } from "../store/videosList";
 import { API_KEY, API_LINK } from "../utils/constants";
 
 export const useFetchVideos = () => {
-  // const [videosList, setVideosList] = useState(null);
-
   const dispatch = useDispatch();
+  const mostPopular = useSelector((store) => store.videos.mostPopular);
+
   useEffect(() => {
-    fetchVideosList();
+    !mostPopular && fetchVideosList();
   }, []);
 
   const fetchVideosList = async () => {
@@ -16,10 +16,6 @@ export const useFetchVideos = () => {
       API_LINK + API_KEY + "&rel=0&modestBranding=1&maxResults=20"
     );
     const json = await data.json();
-    // console.log(json.items);
     dispatch(addMostPopularVideos(json.items));
-    // setVideosList(json.items);
   };
-
-  // return videosList;
 };
