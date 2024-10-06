@@ -30,7 +30,6 @@ const GptSearch = () => {
     const getMovies = await result.response.text().split(",");
     const promiseArray = getMovies.map((movie) => searchMoviesRapidAPI(movie));
     const moviesList = await Promise.all(promiseArray);
-    console.log(moviesList);
 
     dispatch(addGptResult({ movieNames: getMovies, moviesList: moviesList }));
   };
