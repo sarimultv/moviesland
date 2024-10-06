@@ -47,3 +47,4 @@ export const LANG_PHRASE = {
 };
 
 export const OPENAI_API_KEY = import.meta.env.VITE_API_KEY;
+export const FB_API_KEY = import.meta.env.VITE_FB_API_KEY;

@@ -2,13 +2,14 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getAuth } from "firebase/auth";
+import { FB_API_KEY } from "./constants";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyAQTVGAFWtsz3oLG7JpEdpKHqZ-diTl7YI",
+  apiKey: FB_API_KEY,
   authDomain: "moviesland-e7bfe.firebaseapp.com",
   projectId: "moviesland-e7bfe",
   storageBucket: "moviesland-e7bfe.appspot.com",
