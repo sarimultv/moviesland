@@ -10,7 +10,7 @@ export const LOGO =
 export const API_LINK =
   "https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&regionCode=IN&key=";
 
-export const API_KEY = "AIzaSyDlAwKZLJ3Mk18UDxGq1GHopadmGk4tAYE";
+export const API_KEY = import.meta.env.VITE_YT_API_KEY;
 
 export const SUPPORTED_LANG = [
   { identifier: "en", name: "English" },
@@ -45,3 +45,5 @@ export const LANG_PHRASE = {
     signOutBtn: "வெளியேறு",
   },
 };
+
+export const OPENAI_API_KEY = import.meta.env.VITE_API_KEY;
