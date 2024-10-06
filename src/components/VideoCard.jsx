@@ -3,7 +3,7 @@ const VideoCard = ({ video }) => {
 
   return (
     <div className="w-56">
-      <img src={videoImg.url} alt={video.title} />
+      <img className="w-56" src={videoImg.url} alt={video.title} />
     </div>
   );
 };
