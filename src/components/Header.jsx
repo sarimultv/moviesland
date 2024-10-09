@@ -49,16 +49,16 @@ const Header = () => {
   };
 
   return (
-    <div className="absolute w-full px-8 py-2 bg-gradient-to-b from-black z-20 flex justify-between items-center">
-      <div>
+    <div className="absolute w-full md:px-8 md:py-2 md:bg-gradient-to-b md:from-black z-20 flex justify-between items-center md:flex-row flex-col">
+      <div className="md:m-0 mt-3">
         <img className="w-44" src={LOGO} alt="moviesLandLogo" />
       </div>
-      <div>
+      <div className="md:-mt-0 -mt-4">
         {user && (
           <div className="flex justify-end items-center m-2 p-2">
             {showLang && (
               <select
-                className="p-2 border border-gray-500 bg-gray-600 rounded text-white"
+                className="p-2 m-2 md:m-0 border border-gray-500 bg-gray-600 rounded text-white"
                 onChange={handleLangOption}
               >
                 {SUPPORTED_LANG.map((lang) => (
@@ -75,7 +75,7 @@ const Header = () => {
               {showLang ? "Home" : LANG_PHRASE[lan].GptSearchBtn}
             </button>
             <img
-              className="w-10 h-10 rounded z-50"
+              className="w-10 h-10 rounded z-50 hidden md:inline"
               src={user.photoURL}
               alt="userLogo"
             />

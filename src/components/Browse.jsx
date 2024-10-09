@@ -16,8 +16,12 @@ const Browse = () => {
       <Header />
       {showGPT ? (
         <>
-          <div className="absolute -z-30">
-            <img className="" src={BODY_BG_IMG} alt="backgroundImage" />
+          <div className="fixed -z-30">
+            <img
+              className="w-screen h-screen object-cover"
+              src={BODY_BG_IMG}
+              alt="backgroundImage"
+            />
           </div>
           <GptSearch />
         </>

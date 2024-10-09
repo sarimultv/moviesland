@@ -11,7 +11,7 @@ const MainContainer = () => {
   const { title, description } = mainVideo.snippet;
   const { id } = mainVideo;
   return (
-    <div>
+    <div className="md:pt-0 pt-[45%] bg-black">
       <VideoTitle title={title} description={description} />
       <VideoBackground videoId={id} />
     </div>

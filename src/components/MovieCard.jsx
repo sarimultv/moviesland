@@ -1,11 +1,14 @@
 const MovieCard = ({ movie }) => {
+  const imgSrc = movie?.titlePosterImageModel?.url;
+  const imgAlt = movie?.titleNameText;
+
   return (
-    movie && (
-      <div className="w-56 pb-2 mb-1">
+    imgSrc && (
+      <div className="md:w-56 w-32 pb-2 mb-1 rounded">
         <img
-          className="w-56 h-80"
-          src={movie.titlePosterImageModel.url}
-          alt={movie.titleNameText}
+          className="md:w-56 md:h-80 w-32 h-44 rounded"
+          src={imgSrc}
+          alt={imgAlt}
         />
       </div>
     )

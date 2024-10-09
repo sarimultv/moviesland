@@ -5,8 +5,8 @@ const SecondaryContainer = () => {
   const videos = useSelector((store) => store.videos);
 
   return (
-    <div className="bg-black p-2">
-      <div className="-mt-52 relative z-30 ">
+    <div className="bg-black md:p-2 md:pb-4 pb-4">
+      <div className="md:-mt-52 relative z-30 ">
         <VideoList title={"Now Playing"} videos={videos.mostPopular} />
         <VideoList title={"Most Popular"} videos={videos.mostPopular} />
         <VideoList title={"Trending"} videos={videos.mostPopular} />

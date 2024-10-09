@@ -35,19 +35,19 @@ const GptSearch = () => {
   };
 
   return (
-    <div className="pt-[10%]">
+    <div className="md:pt-[10%] pt-[45%]">
       <form
-        className="bg-gray-950 grid grid-cols-12 w-[50%] p-2 m-auto rounded"
+        className="bg-gray-950 grid grid-cols-12 md:w-[50%] p-2  md:m-auto m-2 rounded"
         onSubmit={handleForm}
       >
         <input
           ref={searchText}
-          className="p-2 border border-gray-400 bg-white rounded col-span-10 mr-2"
+          className="p-2 border border-gray-400 bg-white rounded md:col-span-10 col-span-12 md:mr-2 m-2"
           type="text"
           placeholder={LANG_PHRASE[lang_show].placeholder}
         />
         <input
-          className="p-2 border border-none bg-red-800 text-white rounded col-span-2 cursor-pointer hover:bg-red-900"
+          className="p-2 border border-none bg-red-800 text-white rounded md:col-span-2 col-span-12 m-2 cursor-pointer hover:bg-red-900"
           type="button"
           value={LANG_PHRASE[lang_show].search}
           onClick={handleForm}
