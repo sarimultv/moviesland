@@ -6,14 +6,14 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { LANG_PHRASE, LOGO, SUPPORTED_LANG } from "../utils/constants";
 import { signOut } from "firebase/auth";
-import { showGptSearch } from "../store/gptSlice";
+import { showGeminiSearch } from "../store/geminiSlice";
 import { changeLanguage } from "../store/languageSlice";
 
 const Header = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const user = useSelector((store) => store.user);
-  const showLang = useSelector((store) => store.gpt.showGPT);
+  const showLang = useSelector((store) => store.gemini.showGemini);
   const lan = useSelector((store) => store.language.lang);
 
   useEffect(() => {
@@ -40,8 +40,8 @@ const Header = () => {
       .catch(() => {});
   };
 
-  const handleGptSearch = () => {
-    dispatch(showGptSearch());
+  const handleGeminiSearch = () => {
+    dispatch(showGeminiSearch());
   };
 
   const handleLangOption = (e) => {
@@ -70,9 +70,11 @@ const Header = () => {
             )}
             <button
               className="bg-gray-500 p-2 m-2 rounded text-white"
-              onClick={handleGptSearch}
+              onClick={handleGeminiSearch}
             >
-              {showLang ? "Home" : LANG_PHRASE[lan].GptSearchBtn}
+              {showLang
+                ? LANG_PHRASE[lan].homeBtn
+                : LANG_PHRASE[lan].geminiSearchBtn}
             </button>
             <img
               className="w-10 h-10 rounded z-50 hidden md:inline"

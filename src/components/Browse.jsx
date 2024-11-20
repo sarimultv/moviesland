@@ -2,19 +2,19 @@ import Header from "./Header";
 import { useFetchVideos } from "../customhook/useFetchVideos";
 import MainContainer from "./MainContainer";
 import SecondaryContainer from "./SecondaryContainer";
-import GptSearch from "./GptSearch";
+import GeminiSearch from "./GeminiSearch";
 import { useSelector } from "react-redux";
 import { BODY_BG_IMG } from "../utils/constants";
 
 const Browse = () => {
   useFetchVideos();
 
-  const showGPT = useSelector((store) => store.gpt.showGPT);
+  const showGemini = useSelector((store) => store.gemini.showGemini);
 
   return (
-    <div>
+    <div className="min-h-screen">
       <Header />
-      {showGPT ? (
+      {showGemini ? (
         <>
           <div className="fixed -z-30">
             <img
@@ -23,7 +23,7 @@ const Browse = () => {
               alt="backgroundImage"
             />
           </div>
-          <GptSearch />
+          <GeminiSearch />
         </>
       ) : (
         <>

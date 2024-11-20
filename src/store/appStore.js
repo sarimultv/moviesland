@@ -1,14 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
 import userSlice from "./userSlice";
 import videosSlice from "./videosList";
-import gptSlice from "./gptSlice";
+import geminiSlice from "./geminiSlice";
 import languageSlice from "./languageSlice";
 
 const appStore = configureStore({
   reducer: {
     user: userSlice.reducer,
     videos: videosSlice.reducer,
-    gpt: gptSlice.reducer,
+    gemini: geminiSlice.reducer,
     language: languageSlice.reducer,
   },
 });
