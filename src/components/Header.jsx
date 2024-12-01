@@ -49,9 +49,9 @@ const Header = () => {
   };
 
   return (
-    <div className="absolute w-full md:px-8 md:py-2 md:bg-gradient-to-b md:from-black z-20 flex justify-between items-center md:flex-row flex-col">
-      <div className="md:m-0 mt-3">
-        <img className="w-44" src={LOGO} alt="moviesLandLogo" />
+    <div className="absolute w-full md:px-8 md:py-2 md:bg-gradient-to-b md:from-red-800 z-20 flex justify-between items-center md:flex-row flex-col">
+      <div className="md:m-0 mt-3 bg-red-400 p-2 rounded">
+        <img className="w-48" src={LOGO} alt="moviesLandLogo" />
       </div>
       <div className="md:-mt-0 -mt-4">
         {user && (

@@ -2,7 +2,7 @@ export const USER_AVATAR = "./userPicture.jpg";
 
 export const BODY_BG_IMG = "./backgroundImg.jpg";
 
-export const LOGO = "./logo.jpg";
+export const LOGO = "./logo.png";
 
 export const API_LINK =
   "https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&regionCode=IN&key=";
